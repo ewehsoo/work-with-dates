@@ -1,8 +1,11 @@
 start
 new birthday number 
-set birthday 10072007
+set birthday 1184011200000
 log number TIME 
 new age number
 set age TIME-birthday
 log number age
+new date number 
+set date age-TIME
+log number date 
 finish
