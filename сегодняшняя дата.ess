@@ -42,5 +42,5 @@ end da
 set day day+1
 set yearnew yearnew+1970
 set month month+1
-log string "Сегодняшняя дата: " >> day >> "-" >> month>> "-" >> year1
+log string "Сегодняшняя дата - " >> day >> "-" >> month>> "-" >> yearnew
 finish
