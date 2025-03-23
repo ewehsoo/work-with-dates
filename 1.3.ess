@@ -1,11 +1,20 @@
-start
-log number TIME
-loop a (TIME>4)
-  set TIME-4
+start 
+new num number
+set num TIME
+new year number
+set year 0
+loop s (b>31536000000)
+set num num-31536000000
+set year year+1
+end s
+set year year+1970
+log string "Год в данный момент:" >> year
+loop a (year>3)
+set year year-4
 end a
-  if(1>TIME)
-     log string "Да, год високосный"
-  else 
-     log string "Нет, год не вискокосный"
-  close
-    finish
+if (1>year)
+log string "Год является високосным"
+else 
+log string "Год не является високосным"
+close
+finish
