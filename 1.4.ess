@@ -1,0 +1,55 @@
+start
+new a number
+set a TIME
+new year number
+set year 0
+loop s (a>31535999999)
+set a a-31536000000
+set year year+1
+end s
+new visokosnye number
+set visokosnye 0
+loop vi (year>3)
+set year year-4
+set visokosnye visokosnye+1
+end vi 
+new visokosnyeday number
+set visokosnyeday 0
+loop vida (visokosnye>0)
+set visokosnyeday visokosnyeday+86400000 
+set visokosnye visokosnye-1
+end vida
+new b number
+set b TIME-viday 
+new bday number
+set bday 1180224000000
+set bday bday-visokosnyeday
+new age number
+set age b-bday
+new ageyear number
+set ageyear 0
+loop s (age>31535999999)
+set age age-31536000000
+set ageyear ageyear+1
+end s 
+loop f (b>31535999999)
+set b b-31536000000
+end f
+loop l (bday>31535999999)
+set bday bday-31536000000
+end l
+if (bday>b)
+set ageyear ageyear+1 
+log string "Вам будет в этом году: " >> ageyear
+else ?если день рождения уже был
+log string "В этом году вам исполнилось: " >> ageyear
+close
+loop u (ageyear>4) 
+set ageyear ageyear-5
+end u
+if (ageyear>0)
+log string "У вас не будет юбилея в этом году"
+else 
+log string "У вас будет в этом году юбилей"
+close
+finish
