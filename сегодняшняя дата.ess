@@ -1,3 +1,46 @@
 start
-log string TIME
+new num number
+set num TIME
+new year number
+set year 0
+loop s (num>31535999999)
+set a num-31536000000
+set year year+1
+end s
+new visokosnye number
+set visokosnye 0
+loop vi (year>3)
+set year year-4
+set visokosnye vis+1
+end vi 
+new visokosnyeday number
+set visokosnyeday 0
+loop vida (vis>0)
+set visokosnyeday visokosnyeday+86400000 
+set vis vis-1
+end vida
+new nam number
+set nam TIME-visokosnyeday
+new yearnew number
+set yearnew 0
+loop ye (b>31535999999)
+set nam nam-31536000000
+set yearnew yearnew+1
+end ye
+new month number
+set month 0
+loop mo (nam>2591999999)
+set nam nam-2592000000
+set month month+1
+end mo
+new day number
+set day 0
+loop da (nam>86399999)
+set nam nam-86400000
+set day day+1
+end da
+set day day+1
+set yearnew yearnew+1970
+set month month+1
+log string "Сегодняшняя дата: " >> day >> "-" >> month>> "-" >> year1
 finish
